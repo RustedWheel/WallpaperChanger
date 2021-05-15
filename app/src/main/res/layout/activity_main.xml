@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gainsboro"
+    tools:context=".screens.MainActivity">
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/mainHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/activity_padding"
+        android:paddingStart="@dimen/activity_padding"
+        android:paddingEnd="@dimen/activity_padding"
+        android:textSize="32dp"
+        android:text="@string/app_name"
+        android:textColor="@color/colorPrimary"/>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/mainHeader"
+        android:layout_above="@id/mainSaveButton">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_padding"
+            android:orientation="vertical"
+            android:clipToPadding="false">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/mainWallpaperFolderButton"
+                style="@style/CardStyle"
+                app:contentPadding="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/mainSelectedFolderImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/card_image_background_height"
+                        android:scaleType="centerCrop"
+                        android:visibility="gone"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/mainSelectedFolderText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="22dp"
+                        android:paddingEnd="@dimen/card_padding"
+                        android:paddingTop="6dp"
+                        android:paddingBottom="6dp"
+                        android:background="@color/darkgrey"
+                        android:textColor="@android:color/white"
+                        android:textSize="14dp"
+                        android:text="@string/select_folder"/>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/mainChangeTimeCard"
+                style="@style/CardStyle">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <android.support.v7.widget.AppCompatCheckBox
+                        android:id="@+id/mainChangeWallpaperCheckbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/change_wallpaper_every"
+                        android:textSize="14dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_below="@id/mainChangeWallpaperCheckbox">
+
+                        <android.support.v7.widget.AppCompatEditText
+                            android:id="@+id/mainChangeWallpaperTimeInput"
+                            android:layout_width="@dimen/edit_text_width"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:inputType="number"
+                            android:gravity="center"/>
+
+                        <android.support.v7.widget.AppCompatSpinner
+                            android:id="@+id/mainChangeWallpaperDateSpinner"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:entries="@array/time_arrays"
+                            android:prompt="@string/change_wallpaper_every"
+                            android:layout_marginStart="6dp"/>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                style="@style/CardStyle">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.AppCompatCheckBox
+                        android:id="@+id/mainMainScreenCheckbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/change_wallpaper_main"
+                        android:textSize="14dp"/>
+
+                    <android.support.v7.widget.AppCompatCheckBox
+                        android:id="@+id/mainLockScreenCheckbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/change_wallpaper_lock_screen"
+                        android:textSize="14dp"/>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/mainSaveButton"
+        style="@style/CardStyle"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:layout_margin="@dimen/activity_padding"
+        android:layout_alignParentBottom="true"
+        app:contentPadding="8dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="@color/colorPrimary">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="18dp"
+                android:textColor="@android:color/white"
+                android:text="@string/save_settings"/>
+
+            <android.support.v4.widget.ContentLoadingProgressBar
+                android:id="@+id/mainSaveSettingProgressBar"
+                android:layout_width="@dimen/progress_bar_size"
+                android:layout_height="@dimen/progress_bar_size"
+                android:indeterminateTint="@android:color/white"
+                android:layout_gravity="center_vertical|end"/>
+
+        </FrameLayout>
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

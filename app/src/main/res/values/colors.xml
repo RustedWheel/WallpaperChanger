@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#31728E</color>
+    <color name="colorPrimaryDark">#1A5D7A</color>
+    <color name="colorAccent">#4b88a2</color>
+
+    <color name="gainsboro">#DCDCDC</color>
+    <color name="darkgrey">#A9A9A9</color>
+</resources>

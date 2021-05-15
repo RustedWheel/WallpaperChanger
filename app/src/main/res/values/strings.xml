@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Wallpaper Changer</string>
+    <string name="select_folder">Select folder</string>
+    <string name="change_wallpaper_every">Change wallpaper every</string>
+    <string name="time_to_change_wallpaper">Time to change wallpaper</string>
+    <string name="change_wallpaper_main">Change wallpaper on main screen</string>
+    <string name="change_wallpaper_lock_screen">Change wallpaper on lock screen</string>
+    <string name="folder_description">%s (%d images)</string>
+    <string name="save_settings">Save</string>
+    <string name="folder_not_set_error">Folder not set!</string>
+    <string name="setting_saved">Setting saved!</string>
+
+    <string-array name="time_arrays">
+        <item>weeks</item>
+        <item>days</item>
+        <item>hours</item>
+        <item>minutes</item>
+    </string-array>
+
+</resources>
